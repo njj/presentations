@@ -25,17 +25,66 @@
 <div id="impress">
 
 
-    <div class="step slide" data-x="-1000" data-y="-1500">
+    <div class="step slide" data-x="-1000" data-y="-2500">
         <q>Knockout<b>Basics</b></q>
         <small>by @ktilcu && @nickolus</small>
     </div>
 
-    <div class="step slide" data-x="0" data-y="-1500">
-
+    <div class="step slide" data-x="-1000" data-y="-1500">
+        <q>What is Knockout.js</q>
+        <hr><br>
+        <p>It's an easy way to get content that properly represents the current data.</p>
     </div>
 
+    <div class="step slide" data-x="0" data-y="-1500">
+        <q>Before</q>
+        <hr><br>
+        <pre class="prettyprint lang-javascript">
+            $('.delete').on('click', function(){
+                updateDataModel( $(this), function(id){
+                    removeItemFromUI(id);
+                })
+            })
+        </pre>
+    </div>
+    
     <div class="step slide" data-x="1000" data-y="-1500">
+        <q>After</q>
+        <hr><br>
+        <xmp class="prettyprint" id="htmlXmp"><button data-bind="click: removeItem"></button></xmp>
+        <p><em>because the data is invariably linked to the UI</em></p>
+    </div>
 
+    <div class="step slide" data-x="2000" data-y="-1500">
+        <q>Observable Magic</q>
+        <hr><br>
+        <p>The HTML can be forever linked with the data.</p><br>
+        <ul>
+            <li>- Never have to listen for data changes to update UI</li><br>
+            <li>- Life is much easier</li>
+        </ul>
+    </div>
+
+    <div class="step slide" data-x="3000" data-y="-1500">
+        <q>Why Observe</q>
+        <hr><br>
+        <p>It's what we are trying to do with jQuery</p><br>
+        <pre class="prettyprint lang-javascript">
+            var greeting = ko.observable('hey');
+            greeting('::looks away::');
+
+            var theGreatest = ko.observableArray(
+                ['Luke', 'Anakin', 'Obi Wan']
+            );
+            theGreatest(['Kirk', 'Spock', 'McCoy'])
+        </pre>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500" style="text-align:center">
+    <br>
+    <br>
+    <br>
+        <img src="http://static.fjcdn.com/pictures/Build_0bc9ff_1171183.jpg" alt=""><br>
     </div>
 
     <div class="step slide" data-x="-1000" data-y="-500">
